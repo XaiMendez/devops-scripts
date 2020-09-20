@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    
+    environment {
+        secret_key = credentials('SECRET_JENKINS_ID')
+    }
+    stages {
+        stage('Example stage 1') {
+            steps {
+                sh 'echo $secret_key'
+            }
+        }
+    }
+}
