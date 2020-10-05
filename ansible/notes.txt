@@ -1,0 +1,64 @@
+Configuracion
+
+1 nodo controlador
+2-4-6 nodos administrados
+centos 7.4
+
+Instalacion de nodo de control
+Crear usuario para ejecutar tareas de ansible como no 'root
+
+Instalacion de nodos administrados
+
+Configuracion ssh
+
+Host administrados
+
+
+Architecture
+
+Create user (all server)
+$ useradd srv_ansible
+$ passwd srv_ansible
+
+Install ansible (main server)
+$
+
+Create host
+
+key pair
+$ ssh-keygen
+
+copy public key to servers managed
+$ ssh-copy-id <final-host>
+
+Create inventario file
+$ ansible all -i inventario --list-host
+$ ansible antlet71 -i inventario --list-host
+$ ansible grupo1 -i inventario --list-host
+
+
+==
+Administrar archivos de configuracion de ansible (archivo host como DNS interno)
+
+/etc/hosts
+172.42.21.0 antlet70
+172.42.21.0 antlet71
+
+
+1.5 EJECUCION DE COMANDOS
+$ cp /etc/ansible/ansible.cfg <directory>
+
+===============================
+COMPRENDER ARQUITECTURA ANSIBLE
+===============================
+1. Descripcion
+  -host gestionados usando ssh
+  -host controlador ejecutando scripts
+
+2. EJECUCION
+3. Trabajando con modulos
+
+===============================
+PLAYBOOK
+===============================
+
